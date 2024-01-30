@@ -1,0 +1,5 @@
+# binder/postBuild
+#!/bin/bash
+
+echo "Launching Jupyter notebook..."
+jupyter nbconvert --to notebook --execute <notebook_filename>.ipynb --output <output_notebook_filename>.ipynb
