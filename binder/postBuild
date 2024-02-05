@@ -4,5 +4,14 @@
 mkdir -p $HOME/.jupyter
 echo "c.NotebookApp.notebook_dir = '/home/jovyan'" > $HOME/.jupyter/jupyter_notebook_config.py
 
+# Create the necessary directories
+mkdir -p $HOME/.jupyter/lab/user-settings/@jupyterlab/notebook-extension/
+
 # Create a launch configuration file to open the specific notebook
-echo "jupyter lab combi-scatter-networkx-working05jan24.ipynb" > $HOME/.jupyter/lab/user-settings/@jupyterlab/notebook-extension/tracker.jupyterlab-settings
+echo "{
+  \"tracker\": {
+    \"open_notebooks\": {
+      \"combi-scatter-networkx-working05jan24.ipynb\": \"\"
+    }
+  }
+}" > $HOME/.jupyter/lab/user-settings/@jupyterlab/notebook-extension/tracker.jupyterlab-settings
