@@ -2,3 +2,5 @@ plotly
 pandas
 forex-python
 voila
+yfinance
+matplotlib
