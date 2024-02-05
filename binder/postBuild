@@ -1,5 +1,8 @@
-# binder/postBuild
 #!/bin/bash
 
-echo "Launching Jupyter notebook..."
-jupyter nbconvert --to notebook --execute <notebook_filename>.ipynb --output <output_notebook_filename>.ipynb
+# Create a Jupyter configuration file
+mkdir -p $HOME/.jupyter
+echo "c.NotebookApp.notebook_dir = '/home/jovyan'" > $HOME/.jupyter/jupyter_notebook_config.py
+
+# Create a launch configuration file to open the specific notebook
+echo "jupyter lab combi-scatter-networkx-working05jan24.ipynb" > $HOME/.jupyter/lab/user-settings/@jupyterlab/notebook-extension/tracker.jupyterlab-settings
